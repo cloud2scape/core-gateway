@@ -9,29 +9,24 @@ spring:
             uri: lb://service-account
             predicates:
               - Path=/account/**
+              - Method=GET,POST,PUT,PATCH,DELETE
             filters:
-              - RewritePath=/account/(?<segment>.*), /$\{segment}
+              - RewritePath=/account/?(?<segment>.*), /$\{segment}
           - id: service-order
             uri: lb://service-order
             predicates:
               - Path=/order/**
+              - Method=GET,POST,PUT,PATCH,DELETE
             filters:
-              - RewritePath=/order/(?<segment>.*), /$\{segment}
+              - RewritePath=/order/?(?<segment>.*), /$\{segment}
           - id: service-product
             uri: lb://service-product
             predicates:
               - Path=/product/**
+              - Method=GET,POST,PUT,PATCH,DELETE
             filters:
-              - RewritePath=/product/(?<segment>.*), /$\{segment}
-          - id: core-auth
-            uri: lb://core-auth
-            predicates:
-              - Path=/auth/**
-            filters:
-              - RewritePath=/auth/(?<segment>.*), /$\{segment}
+              - RewritePath=/product/?(?<segment>.*), /$\{segment}
 
-server:
-  port: 8080
 management:
   endpoints:
     web:
