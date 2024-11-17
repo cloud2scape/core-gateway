@@ -13,3 +13,4 @@ COPY --from=builder /app/build/libs/core-gateway.jar .
 
 ENTRYPOINT ["java", "-jar", "core-gateway.jar"]
 EXPOSE 8080
+EXPOSE 80
