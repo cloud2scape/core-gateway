@@ -2,13 +2,9 @@ spring:
   config:
     activate:
       on-profile: kubernetes
-      on-cloud-platform: kubernetes
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
     enabled: false
-
-server:
-  port: 80

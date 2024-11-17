@@ -26,19 +26,3 @@ spring:
               - Method=GET,POST,PUT,PATCH,DELETE
             filters:
               - RewritePath=/product/?(?<segment>.*), /$\{segment}
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      enabled: true
-    info:
-      enabled: true
-
-logging:
-  level:
-    org.springframework.cloud.gateway: TRACE
-    org.springframework.cloud.loadbalancer: TRACE

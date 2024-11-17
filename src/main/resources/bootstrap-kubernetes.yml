@@ -2,15 +2,8 @@ spring:
   config:
     activate:
       on-cloud-platform: kubernetes
-      on-profile: kubernetes
   cloud:
-    config:
-      enabled: true
     kubernetes:
-      config:
-        enabled: true
-        name: config-gateway
-        namespace: default
       loadbalancer:
         mode: service
 
@@ -19,3 +12,6 @@ eureka:
     fetch-registry: false
     register-with-eureka: false
     enabled: false
+
+server:
+  port: 8080
