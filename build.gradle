@@ -60,6 +60,12 @@ dependencies {
 
     // database
     runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // log
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+    implementation 'io.zipkin.reporter2:zipkin-reporter-brave'
+    implementation 'io.micrometer:micrometer-tracing-bridge-brave'
 }
 
 dependencyManagement {
