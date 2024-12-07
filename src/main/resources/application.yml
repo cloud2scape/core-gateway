@@ -9,6 +9,7 @@ spring:
       - "optional:classpath:/config/monitoring.yml"
       - "optional:classpath:/config/message-source.yml"
       - "optional:classpath:/config/auth.yml"
+      - "optional:classpath:/config/circuit-breaker.yml"
 
   profiles:
     active: ${PROFILE:dev}
