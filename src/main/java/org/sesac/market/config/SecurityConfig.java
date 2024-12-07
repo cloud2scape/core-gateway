@@ -55,11 +55,11 @@ public class SecurityConfig {
                 .addLogoutHandler(logoutHandler()));
 
         http.sessionManagement(session -> {
-            session.maximumSessions(1)
+            session
+                    .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                    .maximumSessions(1)
                     .maxSessionsPreventsLogin(false)
                     .sessionRegistry(sessionRegistry);
-
-            session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
         });
 
         return http.build();
